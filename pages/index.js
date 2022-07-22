@@ -1,8 +1,16 @@
-import Head from 'next/head'
+import Head from 'next/head';
 // import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
+import { walletlink } from '../lib/connectors';
+import { useEthers } from '@usedapp/core';
 
 export default function Home() {
+  const { account, activateBrowserWallet } = useEthers();
+
+//   const tryToActivate = () => {
+//     @TODO: add walletconnect logic
+//     activateBrowserWallet();
+// };
   return (
     <div className={styles.container}>
       <Head>
@@ -12,7 +20,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        Easy Pi Earn
+        <button onClick={activateBrowserWallet}>
+          connect
+        </button>
+        <p>Account: {account}</p>
       </main>
 
       <footer className={styles.footer}>

@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import DappProvider from '../containers/DappProvider';
+import DappProvider from '../components/DappProvider';
 
 function MyApp({ Component, pageProps }) {
   return (
